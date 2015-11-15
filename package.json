@@ -4,12 +4,12 @@
   "description": "create html especially suited for use in posts on forums.adobe.com",
   "main": "index.js",
   "dependencies": {
+    "dotenv": "^1.2.0",
     "ejs": "^2.3.4",
     "express": "^4.13.3",
     "winston": "^2.1.0"
   },
   "devDependencies": {
-    "dotenv": "^1.2.0",
     "jspm": "^0.16.14",
     "nodemon": "^1.8.1",
     "tape": "^4.2.2"
