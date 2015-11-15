@@ -7,10 +7,10 @@
     "dotenv": "^1.2.0",
     "ejs": "^2.3.4",
     "express": "^4.13.3",
+    "jspm": "^0.16.14",
     "winston": "^2.1.0"
   },
   "devDependencies": {
-    "jspm": "^0.16.14",
     "nodemon": "^1.8.1",
     "tape": "^4.2.2"
   },
