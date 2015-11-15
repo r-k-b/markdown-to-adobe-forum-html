@@ -1,0 +1,15 @@
+{
+  "name": "markdown-to-adobe-forum",
+  "description": "create html especially suited for use in posts on forums.adobe.com",
+  "success_url": "/",
+  "env": {
+    "SECRET_TOKEN": {
+      "description": "A secret key, for...?",
+      "generator": "secret"
+    }
+  },
+  "image": "heroku/nodejs",
+  "addons": [
+    "papertrail:choklad"
+  ]
+}
