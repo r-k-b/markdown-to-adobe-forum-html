@@ -6,6 +6,14 @@
     "SECRET_TOKEN": {
       "description": "A secret key, for...?",
       "generator": "secret"
+    },
+    "ENV_LOADED": {
+      "description": "This is used to detect whether heroku has already loaded the `.env` file.",
+      "value": "true"
+    },
+    "LOGLEVEL": {
+      "description": "Logging level.",
+      "value": "warn"
     }
   },
   "image": "heroku/nodejs",
