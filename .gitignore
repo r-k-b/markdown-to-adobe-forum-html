@@ -7,3 +7,6 @@ docker-compose.yml
 # WebStorm
 *.iml
 .idea/
+
+# jspm
+public/jspm_packages/
