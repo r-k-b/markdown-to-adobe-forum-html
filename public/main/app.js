@@ -39,6 +39,8 @@ const eventToHtml = R.compose(
 
 const htmlStream = markdownIn
     .map(eventToHtml)
-    .startWith(inputElementMarkdownToHtml($(elems.markdownInput)));
+    .startWith(inputElementMarkdownToHtml(
+        $(elems.markdownInput).get(0))
+    );
 
 htmlStream.assign($(elems.htmlOut), 'text');
