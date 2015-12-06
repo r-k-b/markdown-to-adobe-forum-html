@@ -7,6 +7,8 @@ import Cycle from '@cycle/core';
 import {h, makeDOMDriver} from '@cycle/dom';
 import R from 'ramda';
 
+import hh from 'hyperscript-helpers';
+const {div, pre, code, label, textarea} = hh(h);
 
 const elems = {
     markdownInput: '#md-in',
@@ -23,15 +25,15 @@ function main(responses) {
                  .map(R.bind(md.render, md))
                  .startWith('')
                  .map(htmlOutput =>
-                     h('div', [
-                         h('div', [
-                             h('label', 'Markdown Input'),
-                             h('textarea#md-in')
+                     div([
+                         div([
+                             label('Markdown Input'),
+                             textarea('#md-in')
                          ]),
-                         h('div', [
-                             h('div', 'Output:'),
-                             h('pre', [
-                                 h('code', htmlOutput)
+                         div([
+                             div('Output:'),
+                             pre([
+                                 code(htmlOutput)
                              ])
                          ])
                      ])

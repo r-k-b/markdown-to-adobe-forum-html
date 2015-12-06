@@ -24,6 +24,7 @@ System.config({
     "core-js": "npm:core-js@1.2.6",
     "css": "github:systemjs/plugin-css@0.1.19",
     "he": "npm:he@0.5.0",
+    "hyperscript-helpers": "npm:hyperscript-helpers@2.0.2",
     "jquery": "github:components/jquery@2.1.4",
     "json": "github:systemjs/plugin-json@0.1.0",
     "markdown-it": "npm:markdown-it@5.0.2",
