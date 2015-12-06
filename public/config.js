@@ -14,6 +14,8 @@ System.config({
   },
 
   map: {
+    "@cycle/core": "npm:@cycle/core@6.0.0-rc2",
+    "@cycle/dom": "npm:@cycle/dom@8.0.0-rc4",
     "babel": "npm:babel-core@5.8.34",
     "babel-runtime": "npm:babel-runtime@5.8.34",
     "baconjs": "npm:baconjs@0.7.82",
@@ -26,6 +28,7 @@ System.config({
     "json": "github:systemjs/plugin-json@0.1.0",
     "markdown-it": "npm:markdown-it@5.0.2",
     "ramda": "npm:ramda@0.18.0",
+    "rx": "npm:rx@4.0.7",
     "text": "github:systemjs/plugin-text@0.0.3",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"
@@ -70,6 +73,17 @@ System.config({
     },
     "github:twbs/bootstrap@3.3.5": {
       "jquery": "github:components/jquery@2.1.4"
+    },
+    "npm:@cycle/core@6.0.0-rc2": {
+      "rx": "npm:rx@4.0.7"
+    },
+    "npm:@cycle/dom@8.0.0-rc4": {
+      "hyperscript-helpers": "npm:hyperscript-helpers@2.0.2",
+      "matches-selector": "npm:matches-selector@1.0.0",
+      "vdom-parser": "npm:vdom-parser@1.2.1",
+      "vdom-to-html": "npm:vdom-to-html@2.2.0",
+      "virtual-dom": "npm:virtual-dom@2.1.1",
+      "x-is-array": "npm:x-is-array@0.1.0"
     },
     "npm:amdefine@1.0.0": {
       "fs": "github:jspm/nodelibs-fs@0.1.2",
@@ -140,6 +154,18 @@ System.config({
     "npm:entities@1.1.1": {
       "systemjs-json": "github:systemjs/plugin-json@0.1.0"
     },
+    "npm:error@4.4.0": {
+      "assert": "github:jspm/nodelibs-assert@0.1.0",
+      "camelize": "npm:camelize@1.0.0",
+      "string-template": "npm:string-template@0.2.1",
+      "xtend": "npm:xtend@4.0.1"
+    },
+    "npm:ev-store@7.0.0": {
+      "individual": "npm:individual@3.0.0"
+    },
+    "npm:global@4.3.0": {
+      "process": "npm:process@0.5.2"
+    },
     "npm:graceful-readlink@1.0.1": {
       "fs": "github:jspm/nodelibs-fs@0.1.2"
     },
@@ -167,8 +193,14 @@ System.config({
       "systemjs-json": "github:systemjs/plugin-json@0.1.0",
       "uc.micro": "npm:uc.micro@1.0.0"
     },
+    "npm:next-tick@0.2.2": {
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
     "npm:os-browserify@0.1.2": {
       "os": "github:jspm/nodelibs-os@0.1.0"
+    },
+    "npm:param-case@1.1.1": {
+      "sentence-case": "npm:sentence-case@1.1.2"
     },
     "npm:path-browserify@0.0.0": {
       "process": "github:jspm/nodelibs-process@0.1.2"
@@ -192,6 +224,12 @@ System.config({
       "stream-browserify": "npm:stream-browserify@1.0.0",
       "string_decoder": "npm:string_decoder@0.10.31"
     },
+    "npm:rx@4.0.7": {
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
+    "npm:sentence-case@1.1.2": {
+      "lower-case": "npm:lower-case@1.1.2"
+    },
     "npm:source-map@0.4.4": {
       "amdefine": "npm:amdefine@1.0.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
@@ -213,6 +251,25 @@ System.config({
     "npm:util@0.10.3": {
       "inherits": "npm:inherits@2.0.1",
       "process": "github:jspm/nodelibs-process@0.1.2"
+    },
+    "npm:vdom-parser@1.2.1": {
+      "virtual-dom": "npm:virtual-dom@2.1.1"
+    },
+    "npm:vdom-to-html@2.2.0": {
+      "escape-html": "npm:escape-html@1.0.3",
+      "param-case": "npm:param-case@1.1.1",
+      "virtual-dom": "npm:virtual-dom@2.1.1",
+      "xtend": "npm:xtend@4.0.1"
+    },
+    "npm:virtual-dom@2.1.1": {
+      "browser-split": "npm:browser-split@0.0.1",
+      "error": "npm:error@4.4.0",
+      "ev-store": "npm:ev-store@7.0.0",
+      "global": "npm:global@4.3.0",
+      "is-object": "npm:is-object@1.0.1",
+      "next-tick": "npm:next-tick@0.2.2",
+      "x-is-array": "npm:x-is-array@0.1.0",
+      "x-is-string": "npm:x-is-string@0.1.0"
     }
   }
 });
