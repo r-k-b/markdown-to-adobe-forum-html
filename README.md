@@ -14,3 +14,8 @@ or
     
     nodemon index.js
     
+    
+## Bundling via system.js & jspm
+
+    node systemjs-build.js
+    

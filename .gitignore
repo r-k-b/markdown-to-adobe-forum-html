@@ -10,3 +10,7 @@ docker-compose.yml
 
 # jspm
 public/jspm_packages/
+
+# generated files
+
+public/main/dist/

@@ -12,6 +12,7 @@
     "winston": "^2.1.0"
   },
   "devDependencies": {
+    "babel-core": "^6.3.13",
     "nodemon": "^1.8.1",
     "tape": "^4.2.2"
   },
@@ -38,10 +39,12 @@
       "jquery": "github:components/jquery@^2.1.4",
       "json": "github:systemjs/plugin-json@^0.1.0",
       "markdown-it": "npm:markdown-it@^5.0.2",
+      "ramda": "npm:ramda@^0.18.0",
       "text": "github:systemjs/plugin-text@^0.0.3"
     },
     "devDependencies": {
       "babel-runtime": "npm:babel-runtime@^5.8.24",
+      "clean-css": "npm:clean-css@^3.4.8",
       "core-js": "npm:core-js@^1.1.4"
     }
   }

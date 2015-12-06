@@ -2,24 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Convert CommonMark Markdown into html more suitable for the Adobe Forums.</title>
+    <title>Convert CommonMark Markdown into html more suitable for the Adobe
+        Forums.</title>
 
     <% include ../partials/main-css.ejs %>
 
-    <% include ../partials/main-js.ejs %>
+    <% include ../partials/main-js_DEV.ejs %>
 </head>
 <body>
 
 
+<label>
+    Markdown In: <br>
+    <textarea name="md-in" id="md-in" cols="30" rows="10">[wut](http://www.google.com/)</textarea>
+</label>
 
+<hr>
 
-<div class="example-html">
-    <p> <i> Behold!</i> It counts up and down as you click the buttons </p>
+Html Out: <br>
+<pre><code id="html-out"></code></pre>
 
-    <button id="up"> Up </button>
-    <button id="down"> Down </button>
-    <span id="counter"> 0 </span>
-</div>
 
 </body>
 </html>
