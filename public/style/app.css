@@ -4,11 +4,12 @@
 
 .panes__outer {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .pane__input,
 .pane__output {
-    flex: 0 0 50%;
+    flex: 1 0 50%;
 }
 
 .pane__heading {
@@ -22,4 +23,14 @@
     width: 100%;
     height: calc(100vh - 2rem);
     margin: 0;
+}
+
+@media (max-width: 767px) {
+    .panes__outer {
+        flex-direction: column;
+    }
+
+    .pane__text {
+        height: calc(50vh - 2rem);
+    }
 }
