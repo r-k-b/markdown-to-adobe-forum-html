@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+}
+
+.panes__outer {
+    display: flex;
+}
+
+.pane__input,
+.pane__output {
+    flex: 0 0 50%;
+}
+
+.pane__heading {
+    display: block;
+    height: 2rem;
+    margin: 0;
+}
+
+.pane__text {
+    display: block;
+    width: 100%;
+    height: calc(100vh - 2rem);
+    margin: 0;
+}
