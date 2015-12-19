@@ -2,6 +2,8 @@
 
 **TODO: add notes** 
 
+- [ ] use gulp to add watcher to run `systemjs-build.js`
+
 
 
 ## Starting with `nodemon`

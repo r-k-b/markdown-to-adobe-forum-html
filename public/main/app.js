@@ -10,7 +10,7 @@ import {h, makeDOMDriver} from '@cycle/dom';
 import R from 'ramda';
 
 import hh from 'hyperscript-helpers';
-const {div, a, pre, code, label, textarea} = hh(h);
+const {div, label, textarea} = hh(h);
 
 const elems = {
   markdownInput: '#md-in',
@@ -78,12 +78,17 @@ function main(responses) {
     zipStreams
   );
 
-  const requests = {
+  return { // requests
     DOM: bothStream.map(renderIOPageDom)
   };
-  return requests;
 }
 
-Cycle.run(main, {
+const init = () => Cycle.run(main, {
   DOM: makeDOMDriver(elems.appRoot)
 });
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
