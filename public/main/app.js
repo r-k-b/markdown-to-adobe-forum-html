@@ -5,6 +5,7 @@ import 'bootstrap/css/bootstrap.css!'; // TODO: switch to less or sass for mixin
 import 'style/app.css!';
 import markdownit from 'markdown-it';
 import Cycle from '@cycle/core';
+import Rx from 'rx';
 import {h, makeDOMDriver} from '@cycle/dom';
 import R from 'ramda';
 
@@ -21,19 +22,34 @@ const initialInput = '# foo \nbar';
 
 const md = markdownit();
 
-const renderIOPageDom = (htmlOutput) =>
+const showMe = R.curry((label = 'showMe...', data) => {
+    console.group(label);
+    console.log(data);
+    console.groupEnd();
+});
+
+const zipStreams = (inputStream, outputStream) => R.zipObj(
+    ['in', 'out'],
+    [inputStream, outputStream]
+);
+
+const renderIOPageDom = (inOut) =>
     div('.panes__outer', [
         div('.pane__input', [
             label('.pane__heading', {
-                attributes: {
-                    for: '#md-in'
-                }
-            }, 'Markdown Input'),
+                    attributes: {
+                        for: '#md-in'
+                    }
+                },
+                'Markdown Input'
+            ),
             textarea('#md-in.pane__text', {
-                attributes: {
-                    autofocus: 'autofocus'
-                }
-            })
+                    attributes: {
+                        autofocus: 'autofocus'
+                    }
+                },
+                inOut.in
+            )
         ]),
         div('.pane__output', [
             div('.pane__heading', 'Output:'),
@@ -42,18 +58,28 @@ const renderIOPageDom = (htmlOutput) =>
                         readonly: 'readonly'
                     }
                 },
-                htmlOutput
+                inOut.out
             )
         ])
     ]);
 
 function main(responses) {
+    const inputStream = responses.DOM.select(elems.markdownInput)
+        .events('input')
+        .map(ev => ev.target.value)
+        .startWith(initialInput);
+
+    const outputStream = inputStream
+        .map(R.bind(md.render, md));
+
+    const bothStream = Rx.Observable.zip(
+        inputStream,
+        outputStream,
+        zipStreams
+    );
+
     const requests = {
-        DOM: responses.DOM.select(elems.markdownInput).events('input')
-                 .map(ev => ev.target.value)
-                 .map(R.bind(md.render, md))
-                 .startWith(initialInput)
-                 .map(renderIOPageDom)
+        DOM: bothStream.map(renderIOPageDom)
     };
     return requests;
 }
