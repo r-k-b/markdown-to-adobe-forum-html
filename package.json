@@ -23,6 +23,7 @@
   "scripts": {
     "start": "node index.js",
     "test": "node spec/test-index.js",
+    "install": "node systemjs-build.js",
     "postinstall": "jspm install"
   },
   "author": "Robert K. Bell <robert.k.bell@gmail.com>",
