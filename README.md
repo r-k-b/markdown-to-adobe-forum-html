@@ -38,3 +38,4 @@ or
 - [ ] add https support with Let's Encrypt
   - [ ] research how this will work, between local dev & Heroku
 - [ ] add offline support with service workers
+- [ ] research best practices for http/2 + jspm  
