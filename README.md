@@ -24,6 +24,7 @@ or
 - [ ] add checkbox markdown plugin (like [`markdown-it-checkbox`](https://www.npmjs.com/package/markdown-it-checkbox), but to unicode instead of html 
 - [ ] use empty `<p>` tags between blocks
 - [ ] preserve whitespace in `<pre>` tags
+- [ ] code colouring?
 
 - [ ] use gulp to add watcher to run `systemjs-build.js`
   - [ ] can it trigger a page reload?
