@@ -3,7 +3,7 @@
 import bootstrap from 'bootstrap';
 import 'bootstrap/css/bootstrap.css!'; // TODO: switch to less or sass for mixins & suchlike
 import 'style/app.css!';
-import markdownit from 'markdown-it';
+import customiseMd from './lib/customise-markdown';
 import Cycle from '@cycle/core';
 import Rx from 'rx';
 import {h, makeDOMDriver} from '@cycle/dom';
@@ -19,8 +19,6 @@ const elems = {
 };
 
 const initialInput = 'foo\n\nbar\n\nbaz';
-
-const md = markdownit();
 
 const showMe = R.curry((label = 'showMe...', data) => {
   console.group(label);
@@ -38,7 +36,7 @@ const renderIOPageDom = (inOut) =>
     div('.pane__input', [
       label('.pane__heading', {
           attributes: {
-            for: '#md-in'
+            for: 'md-in'
           }
         },
         'Markdown Input'
@@ -70,7 +68,7 @@ function main(responses) {
     .startWith(initialInput);
 
   const outputStream = inputStream
-    .map(R.bind(md.render, md));
+    .map(customiseMd);
 
   const bothStream = Rx.Observable.zip(
     inputStream,

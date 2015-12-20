@@ -28,10 +28,15 @@ or
 
 ## future
 
+- [ ] tests
+- [ ] change <kbd>Tab</kbd> behaviour from 'focus next' to 'increase indent' when input elem is focused
+  - [ ] is this problematic in terms of a11y?
 - [ ] add checkbox markdown plugin (like [`markdown-it-checkbox`](https://www.npmjs.com/package/markdown-it-checkbox), but to unicode instead of html 
-- [ ] use empty `<p>` tags between blocks
-- [ ] preserve whitespace in `<pre>` tags
+- [x] use empty `<p>` tags between blocks
+- [x] preserve whitespace in `<pre>` tags
+- [x] use `<br />` tags in code blocks, to workaround newline stripping 
 - [ ] code colouring / syntax highlighting?
+- [ ] split parsing into own module
 - [ ] use gulp to add watcher to run `systemjs-build.js`
   - [ ] can it trigger a page reload?
 - [ ] `expressjs/compression` does [no caching](https://github.com/expressjs/compression/issues/47); [use a cdn](https://devcenter.heroku.com/articles/http-caching) 
