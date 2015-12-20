@@ -27,7 +27,7 @@ or
 
 - [ ] use gulp to add watcher to run `systemjs-build.js`
   - [ ] can it trigger a page reload?
-- [ ] `expressjs/compression` does no caching; [use a cdn](https://devcenter.heroku.com/articles/http-caching) 
+- [ ] `expressjs/compression` does [no caching](https://github.com/expressjs/compression/issues/47); [use a cdn](https://devcenter.heroku.com/articles/http-caching) 
 - [ ] add https support with Let's Encrypt
   - [ ] research how this will work, between local dev & Heroku
 - [ ] add offline support with service workers
