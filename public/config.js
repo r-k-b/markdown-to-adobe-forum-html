@@ -27,6 +27,7 @@ System.config({
     "hyperscript-helpers": "npm:hyperscript-helpers@2.0.2",
     "jquery": "github:components/jquery@2.1.4",
     "json": "github:systemjs/plugin-json@0.1.0",
+    "localforage": "npm:localforage@1.3.1",
     "markdown-it": "npm:markdown-it@5.0.2",
     "ramda": "npm:ramda@0.18.0",
     "rx": "npm:rx@4.0.7",
@@ -100,6 +101,9 @@ System.config({
       "process": "github:jspm/nodelibs-process@0.1.2",
       "sprintf-js": "npm:sprintf-js@1.0.3",
       "util": "github:jspm/nodelibs-util@0.1.0"
+    },
+    "npm:asap@1.0.0": {
+      "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:assert@1.3.0": {
       "util": "npm:util@0.10.3"
@@ -179,6 +183,11 @@ System.config({
     "npm:linkify-it@1.2.0": {
       "uc.micro": "npm:uc.micro@1.0.0"
     },
+    "npm:localforage@1.3.1": {
+      "path": "github:jspm/nodelibs-path@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.2",
+      "promise": "npm:promise@5.0.0"
+    },
     "npm:lodash@3.10.1": {
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
@@ -208,6 +217,9 @@ System.config({
     },
     "npm:process@0.11.2": {
       "assert": "github:jspm/nodelibs-assert@0.1.0"
+    },
+    "npm:promise@5.0.0": {
+      "asap": "npm:asap@1.0.0"
     },
     "npm:punycode@1.3.2": {
       "process": "github:jspm/nodelibs-process@0.1.2"

@@ -4,6 +4,7 @@ import bootstrap from 'bootstrap';
 import 'bootstrap/css/bootstrap.css!'; // TODO: switch to less or sass for mixins & suchlike
 import 'style/app.css!';
 import customiseMd from './lib/customise-markdown';
+import localforageDriver from './lib/localforage-driver';
 import Cycle from '@cycle/core';
 import Rx from 'rx';
 import {h, makeDOMDriver} from '@cycle/dom';
@@ -18,7 +19,7 @@ const elems = {
   appRoot:       '#app'
 };
 
-const initialInput = 'foo\n\nbar\n\nbaz';
+const initialInput = 'foo\n\n    bar\n\nbaz\n\n> qux';
 
 const showMe = R.curry((label = 'showMe...', data) => {
   console.group(label);
@@ -61,28 +62,33 @@ const renderIOPageDom = (inOut) =>
     ])
   ]);
 
-function main(responses) {
-  const inputStream = responses.DOM.select(elems.markdownInput)
+function main({DOM, storage}) {
+  const inputStream = DOM.select(elems.markdownInput)
     .events('input')
-    .map(ev => ev.target.value)
+    .map(ev => ev.target.value);
+
+  const inputOrStored$ = inputStream
+    .merge(storage)
     .startWith(initialInput);
 
-  const outputStream = inputStream
+  const outputStream = inputOrStored$
     .map(customiseMd);
 
   const bothStream = Rx.Observable.zip(
-    inputStream,
+    inputOrStored$,
     outputStream,
     zipStreams
   );
 
   return { // requests
-    DOM: bothStream.map(renderIOPageDom)
+    DOM:     bothStream.map(renderIOPageDom),
+    storage: inputStream
   };
 }
 
 const init = () => Cycle.run(main, {
-  DOM: makeDOMDriver(elems.appRoot)
+  DOM:     makeDOMDriver(elems.appRoot),
+  storage: localforageDriver.make('markdownInput-v1')
 });
 
 if (document.readyState === 'loading') {
