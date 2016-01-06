@@ -10,6 +10,7 @@
 .pane__input,
 .pane__output {
     flex: 1 0 50%;
+    font-family: "DejaVu Sans Mono", "Droid Sans Mono", Consolas, monospace;
 }
 
 .pane__heading {
