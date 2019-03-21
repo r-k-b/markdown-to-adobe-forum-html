@@ -9,7 +9,7 @@
     "ejs": "^2.3.4",
     "express": "^4.13.3",
     "jspm": "^0.16.14",
-    "systemjs-builder": "^0.14.10",
+    "systemjs-builder": "^0.16.13",
     "winston": "^2.1.0"
   },
   "devDependencies": {
