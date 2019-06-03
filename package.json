@@ -10,7 +10,7 @@
     "express": "^4.13.3",
     "jspm": "^0.16.14",
     "systemjs-builder": "^0.16.15",
-    "winston": "^2.1.0"
+    "winston": "^3.2.1"
   },
   "devDependencies": {
     "babel-core": "^6.3.13",
