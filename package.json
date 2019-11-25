@@ -6,7 +6,7 @@
   "dependencies": {
     "compression": "^1.6.0",
     "dotenv": "^8.0.0",
-    "ejs": "^2.3.4",
+    "ejs": "^3.0.1",
     "express": "^4.13.3",
     "jspm": "^0.16.14",
     "systemjs-builder": "^0.16.15",
