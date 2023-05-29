@@ -8,7 +8,7 @@
     "dotenv": "^8.0.0",
     "ejs": "^3.0.1",
     "express": "^4.13.3",
-    "jspm": "^0.16.14",
+    "jspm": "^3.0.1",
     "systemjs-builder": "^0.16.15",
     "winston": "^3.2.1"
   },
